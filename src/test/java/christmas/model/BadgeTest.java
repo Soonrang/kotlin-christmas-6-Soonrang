@@ -1,9 +1,7 @@
-package christmas.menu;
+package christmas.model;
 
-import christmas.model.Badge;
 import org.junit.jupiter.api.Test;
 
-import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
