@@ -1,5 +1,6 @@
 package christmas.controller;
 
+import christmas.exception.NonNumericInputException;
 import christmas.model.PresentEvent;
 import christmas.model.Restuarant;
 import christmas.model.TotalMenu;
@@ -44,8 +45,10 @@ public class RestaurantController {
             try {
                 int userInputDay = Integer.parseInt(inputView.inputVisitDay());
                 return userInputDay;
-            } catch (IllegalArgumentException e) {
+            } catch (NonNumericInputException e) {
                 System.out.println(e.getMessage());
+            } catch (IllegalArgumentException e) {
+                System.out.println("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
             } catch (IllegalStateException e) {
                 System.out.println(e.getMessage());
             }
@@ -62,9 +65,9 @@ public class RestaurantController {
                 validateNoneMenu(orderList,menuList);
                 return makeOrderList(inputOrder);
             } catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
+                System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
             } catch (IllegalStateException e){
-                System.out.println(e.getMessage());
+                System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
             }
         }
     }
